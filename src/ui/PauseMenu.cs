@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Pausemenu : HBoxContainer
+public partial class PauseMenu : HBoxContainer
 {
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -10,6 +10,8 @@ public partial class Pausemenu : HBoxContainer
 
     public override void _Input(InputEvent @event)
     {
+		//only end pauses that were started with this menu
+		if (!Visible && GetTree().Paused) return;
 		if (@event.IsActionPressed("pause"))
 		{
 			GetViewport().SetInputAsHandled();
