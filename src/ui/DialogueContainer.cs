@@ -24,13 +24,15 @@ public partial class DialogueContainer : PanelContainer
   public void Enable()
   {
     Visible = true;
-    ProcessMode = ProcessModeEnum.Inherit;
+    ProcessMode = ProcessModeEnum.Always;
+    GetTree().Paused = true;
   }
 
   public void Disable()
   {
     Visible = false;
     ProcessMode = ProcessModeEnum.Disabled;
+    GetTree().Paused = false;
   }
 
   public override void _Input(InputEvent @event)

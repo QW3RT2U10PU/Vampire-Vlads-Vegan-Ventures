@@ -10,6 +10,8 @@ public partial class Pausemenu : HBoxContainer
 
     public override void _Input(InputEvent @event)
     {
+		//only end pauses that were started with this menu
+		if (!Visible && GetTree().Paused) return;
 		if (@event.IsActionPressed("pause"))
 		{
 			GetViewport().SetInputAsHandled();
