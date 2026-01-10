@@ -10,8 +10,8 @@ public partial class Level : Node2D
 		var camera = new Camera2D();
 		var map = GetNode<TileMapLayer>("%Map");
 		var bounds = map.GetUsedRect();
-		Vector2 pos = map.MapToLocal(bounds.Position) - map.TileSet.TileSize / 2;
-		Vector2 end = map.MapToLocal(bounds.End) - map.TileSet.TileSize / 2;
+		Vector2 pos = ToLocal(map.ToGlobal(map.MapToLocal(bounds.Position) - map.TileSet.TileSize / 2));
+		Vector2 end = ToLocal(map.ToGlobal(map.MapToLocal(bounds.End) - map.TileSet.TileSize / 2));
 		camera.LimitTop = (int)Math.Ceiling(Math.Min(pos.Y, end.Y));
 		camera.LimitBottom = (int)Math.Floor(Math.Max(pos.Y, end.Y));
 		camera.LimitLeft = (int)Math.Ceiling(Math.Min(pos.X, end.X));
