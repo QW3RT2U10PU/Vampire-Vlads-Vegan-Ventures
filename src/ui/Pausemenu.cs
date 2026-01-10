@@ -8,11 +8,11 @@ public partial class Pausemenu : HBoxContainer
 	{
 	}
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-		if (Input.IsActionJustPressed("pause"))
+    public override void _Input(InputEvent @event)
+    {
+		if (@event.IsActionPressed("pause"))
 		{
+			GetViewport().SetInputAsHandled();
 			GetTree().Paused = !GetTree().Paused;
 			if (GetTree().Paused)
 			{
