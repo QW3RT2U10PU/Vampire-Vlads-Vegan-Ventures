@@ -22,7 +22,6 @@ public partial class Pausemenu : HBoxContainer
 			{
 				Hide();
 			}
-			GD.Print("Input received in Level");
 		}
 	}
 
