@@ -1,0 +1,41 @@
+[gd_scene load_steps=9 format=3 uid="uid://c127jfuaaw3om"]
+
+[ext_resource type="Texture2D" uid="uid://bukqbasjprqww" path="res://res/player.png" id="1_7umm5"]
+[ext_resource type="Script" uid="uid://b4li7i3ta1kjv" path="res://src/levels/Level.cs" id="2_8tcek"]
+[ext_resource type="PackedScene" uid="uid://l5ejvbu0pwmb" path="res://src/player.tscn" id="3_deqfd"]
+[ext_resource type="Texture2D" uid="uid://c58vypxqscl7o" path="res://res/New free backgrounds part5/background 1/orig_big.png" id="4_dv8wo"]
+[ext_resource type="PackedScene" uid="uid://lfw8mch3f8vq" path="res://src/ui/DialogueContainer.tscn" id="5_8tcek"]
+[ext_resource type="PackedScene" uid="uid://dhllw4yhaj0k8" path="res://src/ui/pausemenu.tscn" id="5_kxofx"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1oidb"]
+texture = ExtResource("1_7umm5")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_yir0g"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_1oidb")
+
+[node name="Level" type="Node2D"]
+script = ExtResource("2_8tcek")
+
+[node name="Map" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+tile_set = SubResource("TileSet_yir0g")
+
+[node name="Player" parent="." instance=ExtResource("3_deqfd")]
+unique_name_in_owner = true
+position = Vector2(164, 60)
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -1
+texture = ExtResource("4_dv8wo")
+centered = false
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="DialogueContainer" parent="HUD" instance=ExtResource("5_8tcek")]
+unique_name_in_owner = true
+
+[node name="PauseMenu" parent="HUD" instance=ExtResource("5_kxofx")]
+visible = false
