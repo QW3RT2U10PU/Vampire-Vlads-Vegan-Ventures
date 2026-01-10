@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://c127jfuaaw3om"]
+[gd_scene load_steps=13 format=4 uid="uid://c127jfuaaw3om"]
 
 [ext_resource type="Texture2D" uid="uid://bukqbasjprqww" path="res://res/player.png" id="1_7umm5"]
 [ext_resource type="Script" uid="uid://b4li7i3ta1kjv" path="res://src/levels/Level.cs" id="2_8tcek"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://boxa8erreu3fb" path="res://res/levels/main_lev_build.png" id="3_dv8wo"]
 [ext_resource type="Texture2D" uid="uid://b1en3upy6pbns" path="res://res/levels/other_and_decorative.png" id="4_2tyx5"]
 [ext_resource type="Texture2D" uid="uid://c58vypxqscl7o" path="res://res/New free backgrounds part5/background 1/orig_big.png" id="4_dv8wo"]
+[ext_resource type="Texture2D" uid="uid://fl2cgb3q10ki" path="res://res/levels/blahaj.png" id="5_dv8wo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1oidb"]
 texture = ExtResource("1_7umm5")
@@ -3134,11 +3135,17 @@ texture = ExtResource("4_2tyx5")
 34:37/0 = 0
 35:37/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2tyx5"]
+texture = ExtResource("5_dv8wo")
+0:0/0 = 0
+1:0/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_yir0g"]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_1oidb")
 sources/1 = SubResource("TileSetAtlasSource_54iga")
 sources/2 = SubResource("TileSetAtlasSource_idw2h")
+sources/3 = SubResource("TileSetAtlasSource_2tyx5")
 
 [node name="Level" type="Node2D"]
 script = ExtResource("2_8tcek")
