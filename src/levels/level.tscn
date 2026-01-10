@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://c127jfuaaw3om"]
+[gd_scene load_steps=8 format=4 uid="uid://c127jfuaaw3om"]
 
 [ext_resource type="Texture2D" uid="uid://bukqbasjprqww" path="res://res/player.png" id="1_7umm5"]
 [ext_resource type="Script" uid="uid://b4li7i3ta1kjv" path="res://src/levels/Level.cs" id="2_8tcek"]
 [ext_resource type="PackedScene" uid="uid://l5ejvbu0pwmb" path="res://src/player.tscn" id="3_deqfd"]
 [ext_resource type="Texture2D" uid="uid://c58vypxqscl7o" path="res://res/New free backgrounds part5/background 1/orig_big.png" id="4_dv8wo"]
+[ext_resource type="PackedScene" uid="uid://lfw8mch3f8vq" path="res://src/ui/NPCtext.tscn" id="5_8tcek"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1oidb"]
 texture = ExtResource("1_7umm5")
@@ -30,3 +31,9 @@ position = Vector2(164, 60)
 z_index = -1
 texture = ExtResource("4_dv8wo")
 centered = false
+
+[node name="NPCText" parent="." instance=ExtResource("5_8tcek")]
+offset_left = 537.0
+offset_top = 399.0
+offset_right = 538.0
+offset_bottom = 399.0
