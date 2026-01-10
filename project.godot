@@ -30,6 +30,7 @@ folder_colors={
 "res://doc/": "gray",
 "res://res/": "red",
 "res://src/": "blue",
+"res://src/resourceTypes/": "yellow",
 "res://src/ui/": "green"
 }
 
