@@ -6,6 +6,7 @@ public partial class Level : Node2D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		GetTree().Paused = false;
 		var plr = GetNode("%Player");
 		var camera = new Camera2D();
 		var map = GetNode<TileMapLayer>("%Map");
