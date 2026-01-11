@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://qfjklb4wcrij"]
+[gd_scene load_steps=15 format=4 uid="uid://qfjklb4wcrij"]
 
 [ext_resource type="PackedScene" uid="uid://c127jfuaaw3om" path="res://src/levels/level.tscn" id="1_dqaci"]
 [ext_resource type="Texture2D" uid="uid://boxa8erreu3fb" path="res://res/levels/main_lev_build.png" id="2_11865"]
@@ -3200,6 +3200,8 @@ sources/3 = SubResource("TileSetAtlasSource_1dwf5")
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_iyl2b"]
 normal = Vector2(1, 0)
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wuuke"]
+
 [node name="Room3" instance=ExtResource("1_dqaci")]
 
 [node name="BackgroundTileMap" type="TileMapLayer" parent="." index="0"]
@@ -3212,11 +3214,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAQAJAAMAAAAAAAEAAQAJAAQAAAAAAAIAAQAJAAU
 [node name="Player" parent="." index="2"]
 position = Vector2(32, 200)
 
-[node name="Background" parent="." index="3"]
-scale = Vector2(1.1219136, 1.1219136)
-texture = ExtResource("6_mylj1")
-
-[node name="SceneSwitcher" type="Area2D" parent="." index="5"]
+[node name="SceneSwitcher" type="Area2D" parent="." index="4"]
 position = Vector2(0, 192)
 script = ExtResource("7_wuuke")
 Loads = "uid://dbcfcoq5meela"
@@ -3224,3 +3222,22 @@ metadata/_custom_type_script = "uid://g71io881llkq"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneSwitcher" index="0"]
 shape = SubResource("WorldBoundaryShape2D_iyl2b")
+
+[node name="Parallax2D" type="Parallax2D" parent="." index="5"]
+z_index = -2
+scroll_scale = Vector2(0.3, 0.3)
+scroll_offset = Vector2(-1600, 0)
+
+[node name="Background" type="Sprite2D" parent="Parallax2D" index="0"]
+z_index = -1
+texture = ExtResource("6_mylj1")
+centered = false
+
+[node name="SceneSwitcher2" type="Area2D" parent="." index="6"]
+position = Vector2(440, 1456)
+script = ExtResource("7_wuuke")
+Loads = "uid://481bx1ovo7cf"
+metadata/_custom_type_script = "uid://g71io881llkq"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneSwitcher2" index="0"]
+shape = SubResource("WorldBoundaryShape2D_wuuke")
