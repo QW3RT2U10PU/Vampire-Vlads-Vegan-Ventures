@@ -1,3 +1,4 @@
+using GameJam;
 using Godot;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,11 @@ public partial class DialogueContainer : PanelContainer
   /// when false, blocks advancing to the next line (e. g. during choices)
   /// </summary>
   private bool canContinue = true;
+
+  /// <summary>
+  /// stores the player that triggered the dialogue IF it has an active interaction indicator, null else
+  /// </summary>
+  private Player storedInteractor = null;
 
   public Dialogue CurrentDialogue {set
     {
@@ -63,6 +69,10 @@ public partial class DialogueContainer : PanelContainer
 
   public void Enable()
   {
+    Player p = GetOwner<Level>().GetNode<Player>("%Player");
+    storedInteractor = p.GetNode<InteractionIndicator>("InteractionIndicator").Enabled ? p : null;
+    p.NotifyInteractable(false);
+
     ActiveDialogueContainer = this;
     Visible = true;
     ProcessMode = ProcessModeEnum.Always;
@@ -71,6 +81,7 @@ public partial class DialogueContainer : PanelContainer
 
   public void Disable()
   {
+    storedInteractor?.NotifyInteractable(true);
     ActiveDialogueContainer = null;
     Visible = false;
     ProcessMode = ProcessModeEnum.Disabled;
