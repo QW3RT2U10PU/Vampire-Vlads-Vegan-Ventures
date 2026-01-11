@@ -43,6 +43,7 @@ public partial class Player : CharacterBody2D
 		
 		Vector2 velocity = Velocity;
 		velocity.X = direction.X * Speed;
+		float currentAcceleration = Acceleration;
 
 		if (Input.IsActionJustPressed("dash") && dashState == 0)
 		{
@@ -58,6 +59,7 @@ public partial class Player : CharacterBody2D
 		}
 		else {
 			remainingCoyoteTime -= delta;
+			currentAcceleration /= AirDrag;
 			if (dashState != DashState.ACTIVE)
 			{
 				velocity += GetGravity() * (float)delta;
@@ -81,7 +83,7 @@ public partial class Player : CharacterBody2D
 		else
 		{
 			float xVelocityDelta = velocity.X - Velocity.X;
-			xVelocityDelta = Math.Sign(xVelocityDelta) * Math.Min(Math.Abs(xVelocityDelta), Acceleration * (float) delta);
+			xVelocityDelta = Math.Sign(xVelocityDelta) * Math.Min(Math.Abs(xVelocityDelta), currentAcceleration * (float) delta);
 			velocity.X = Math.Clamp(Velocity.X + xVelocityDelta, -Speed, Speed);
 		}
 
