@@ -26,7 +26,7 @@ public partial class DialogueContainer : PanelContainer
     /// <summary>
     /// stores the player that triggered the dialogue IF it has an active interaction indicator, null else
     /// </summary>
-    private Player storedInteractor = null;
+    private Player _storedInteractor;
 
     public Dialogue CurrentDialogue
     {
@@ -111,7 +111,7 @@ public partial class DialogueContainer : PanelContainer
     public void Enable()
     {
         Player p = GetOwner<Level>().GetNode<Player>("%Player");
-        storedInteractor = p.GetNode<InteractionIndicator>("InteractionIndicator").Enabled ? p : null;
+        _storedInteractor = p.GetNode<InteractionIndicator>("InteractionIndicator").Enabled ? p : null;
         p.NotifyInteractable(false);
 
         ActiveDialogueContainer = this;
@@ -122,7 +122,7 @@ public partial class DialogueContainer : PanelContainer
 
     public void Disable()
     {
-        storedInteractor?.NotifyInteractable(true);
+        _storedInteractor?.NotifyInteractable(true);
         ActiveDialogueContainer = null;
         Visible = false;
         ProcessMode = ProcessModeEnum.Disabled;
