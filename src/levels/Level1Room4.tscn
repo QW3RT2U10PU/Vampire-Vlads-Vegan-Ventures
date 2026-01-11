@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://boxa8erreu3fb" path="res://res/levels/main_lev_build.png" id="2_1mhg8"]
 [ext_resource type="Texture2D" uid="uid://b1en3upy6pbns" path="res://res/levels/other_and_decorative.png" id="3_ff12k"]
 [ext_resource type="Texture2D" uid="uid://caoq2e3sv7cg5" path="res://res/levels/bg/ironmaiden1.png" id="4_u02m8"]
-[ext_resource type="Texture2D" path="res://res/New free backgrounds part5/background 1/orig_big.png" id="5_u02m8"]
+[ext_resource type="Texture2D" uid="uid://cdjd6mlnbdpj4" path="res://res/levels/bg/orig_big.png" id="5_u02m8"]
 [ext_resource type="PackedScene" uid="uid://lfw8mch3f8vq" path="res://src/ui/DialogueContainer.tscn" id="6_xke1e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xke1e"]

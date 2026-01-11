@@ -2354,7 +2354,7 @@ shape = SubResource("WorldBoundaryShape2D_ylqh3")
 position = Vector2(1543.9999, 208)
 scale = Vector2(1.4215643, 1.2006174)
 script = ExtResource("2_8ogbn")
-Loads = "uid://yqs7sqv0lo6g"
+Loads = "uid://blemad8rwch2f"
 Interaction = 3
 metadata/_custom_type_script = "uid://g71io881llkq"
 
