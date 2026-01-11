@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://bfpu7cdwgvy54"]
+[gd_scene load_steps=13 format=4 uid="uid://bfpu7cdwgvy54"]
 
 [ext_resource type="PackedScene" uid="uid://c127jfuaaw3om" path="res://src/levels/level.tscn" id="1_sfdl2"]
 [ext_resource type="Texture2D" uid="uid://boxa8erreu3fb" path="res://res/levels/main_lev_build.png" id="2_rubg8"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://g71io881llkq" path="res://src/entities/SceneSwitcher.cs" id="4_udc7p"]
 [ext_resource type="Script" uid="uid://bj5r16otyk2oy" path="res://src/entities/Npc.cs" id="5_uln2i"]
 [ext_resource type="Resource" uid="uid://dxd6b2tq1h0r5" path="res://res/dialogue/intro.tres" id="6_rlgdg"]
+[ext_resource type="Texture2D" uid="uid://cdjd6mlnbdpj4" path="res://res/levels/bg/orig_big.png" id="7_rubg8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1hjis"]
 texture = ExtResource("2_rubg8")
@@ -2335,10 +2336,7 @@ collision_visibility_mode = 1
 [node name="Player" parent="." index="2"]
 position = Vector2(46, 182)
 
-[node name="Background" parent="." index="3"]
-visible = false
-
-[node name="SceneSwitcher" type="Area2D" parent="." index="5"]
+[node name="SceneSwitcher" type="Area2D" parent="." index="4"]
 position = Vector2(912, 176)
 script = ExtResource("4_udc7p")
 Loads = "uid://ux4yjd4o437b"
@@ -2348,7 +2346,7 @@ metadata/_custom_type_script = "uid://g71io881llkq"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneSwitcher" index="0"]
 shape = SubResource("WorldBoundaryShape2D_1ysvb")
 
-[node name="Npc" type="Area2D" parent="." index="6"]
+[node name="Npc" type="Area2D" parent="." index="5"]
 script = ExtResource("5_uln2i")
 NpcDialogue = ExtResource("6_rlgdg")
 metadata/_custom_type_script = "uid://bj5r16otyk2oy"
@@ -2357,3 +2355,10 @@ metadata/_custom_type_script = "uid://bj5r16otyk2oy"
 position = Vector2(65, 153)
 shape = SubResource("RectangleShape2D_wewd6")
 debug_color = Color(0.94641477, 6.6420434e-06, 0.5902165, 0.41960785)
+
+[node name="Parallax2D" type="Parallax2D" parent="." index="6"]
+scroll_scale = Vector2(0.3, 0.3)
+
+[node name="Background" type="Sprite2D" parent="Parallax2D" index="0"]
+z_index = -1
+texture = ExtResource("7_rubg8")
