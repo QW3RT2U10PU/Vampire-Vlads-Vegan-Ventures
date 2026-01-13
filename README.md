@@ -1,4 +1,6 @@
-# This game was made wiht Godot 4.5.1 for a private 48h GameJam.
+# Vampire-Vlad's Vegan Ventures
+
+This game was made with Godot 4.5.1 for a private 48h game jam.
 
 Vampire Vlad's Vegan Ventures is a platformer game where a young vampire wants to visit Berlin and stop eating humans. On his journey, he will encounter a strong enemy...
 
